@@ -1276,6 +1276,16 @@ config HID_KUNIT_TEST
 
 	  If in doubt, say "N".
 
+config AMD_SFH_TABLET_MODE_SWITCH
+	tristate "AMD Sensor Fusion Hub Tablet Mode switch"
+	default AMD_SFH_HID
+	help
+	  If you say yes to this option, support will be included for Tablet
+	  Mode Switches managed by AMD Sensor Fusion Hub.
+
+	  This driver can also be built as a module. If so, the module will
+	  be called amd-sfh.
+	  Say Y or M here if you want to support AMD SFH. If unsure, say N.
 endmenu
 
 endif # HID
