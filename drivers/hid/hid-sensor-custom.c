@@ -801,9 +801,12 @@ static int get_known_custom_sensor_index(struct hid_sensor_hub_device *hsdev)
 	for (i = 0; i < ARRAY_SIZE(buf) - 1 && w_buf[i]; i++)
 		buf[i] = (char)w_buf[i];
 
+	pr_err("Custom Sensor by manufacturer %s", buf);
+
 	/* ensure it's ISH sensor */
-	if (strncmp(buf, "INTEL", strlen("INTEL")))
+	/*if (strncmp(buf, "INTEL", strlen("INTEL")))
 		return -ENODEV;
+		*/
 
 	memset(w_buf, 0, sizeof(w_buf));
 	memset(buf, 0, sizeof(buf));
@@ -827,6 +830,8 @@ static int get_known_custom_sensor_index(struct hid_sensor_hub_device *hsdev)
 	/* convert from wide char to char */
 	for (i = 0; i < ARRAY_SIZE(buf) - 1 && w_buf[i]; i++)
 		buf[i] = (char)w_buf[i];
+
+	pr_err("Serial number is %s", buf);
 
 	if (strlen(buf) != strlen(known_sensor_luid[0]) + 5) {
 		hid_err(hsdev->hdev,

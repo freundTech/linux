@@ -759,7 +759,7 @@ static const u8 hpd_report_descriptor[] = {
 /* TABLET MODE SWITCH */
 static const u8 tms_report_descriptor[] = {
 0x05, 0x20,          /* Usage page */
-0x09, 0xF0,          /* VENDOR DEFINED 1  */
+0x09, 0xE1,          /* VENDOR DEFINED 1  */
 0xA1, 0x00,          /* HID Collection (Physical) */
 
 //feature reports(xmit/receive)
